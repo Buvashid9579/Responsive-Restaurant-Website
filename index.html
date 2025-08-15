@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Golden Spoon | Gourmet Dining</title>
+    <!-- Google Fonts for modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .message-box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            z-index: 2000;
+            text-align: center;
+            display: none;
+            max-width: 80%;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="main-header">
+        <nav class="navbar container">
+            <a href="#" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15H9v-2h2v2zm0-4H9v-2h2v2zm0-4H9V7h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z"/></svg>
+                The Golden Spoon
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#order-online" id="order-link">Order</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Taste the Culinary Excellence</h1>
+                <p>An unforgettable dining experience awaits you. Savor a symphony of flavors crafted with passion.</p>
+                <a href="#menu" class="btn">Explore Menu</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container about-content">
+                <div class="about-image">
+                    <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Restaurant Interior" onerror="this.onerror=null;this.src='https://placehold.co/600x400/333/fff?text=Image';">
+                </div>
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>At The Golden Spoon, we believe that food is not just nourishment, but an art form. Our journey began with a simple passion for creating delightful dishes that tell a story. We source the finest local ingredients to craft a menu that celebrates seasonal flavors and innovative culinary techniques. Our commitment is to provide a warm, inviting atmosphere where every meal is a cherished memory.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu">
+            <div class="container">
+                <h2>Our Signature Menu</h2>
+                <div class="menu-grid">
+                    <!-- Initial Menu Items (visible by default) -->
+                    <div class="menu-item">
+                        <img src="https://images.pexels.com/photos/566566/pexels-photo-566566.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Grilled Salmon" onerror="this.onerror=null;this.src='https://placehold.co/400x300/333/fff?text=Image';">
+                        <div class="menu-item-content">
+                            <div class="menu-item-title">
+                                <h3>Grilled Salmon</h3>
+                                <span class="price">₹ 24</span>
+                            </div>
+                            <p>Flaky grilled salmon with a lemon-dill sauce and seasonal vegetables.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://images.pexels.com/photos/674574/pexels-photo-674574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Pasta Bolognese" onerror="this.onerror=null;this.src='https://placehold.co/400x300/333/fff?text=Image';">
+                        <div class="menu-item-content">
+                            <div class="menu-item-title">
+                                <h3>Pasta Bolognese</h3>
+                                <span class="price">₹ 180</span>
+                            </div>
+                            <p>Classic beef and tomato sauce simmered for hours, served with fresh tagliatelle.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="https://images.pexels.com/photos/103130/pexels-photo-103130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Caprese Salad" onerror="this.onerror=null;this.src='https://placehold.co/400x300/333/fff?text=Image';">
+                        <div class="menu-item-content">
+                            <div class="menu-item-title">
+                                <h3>Caprese Salad</h3>
+                                <span class="price">₹ 140</span>
+                            </div>
+                            <p>Fresh mozzarella, ripe tomatoes, basil, and a balsamic glaze.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Hidden Menu Items (initially hidden, will appear on button click) -->
+                    <div class="menu-item hidden-item">
+                        <img src="https://images.pexels.com/photos/541216/pexels-photo-541216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Vegetable Stir Fry" onerror="this.onerror=null;this.src='https://placehold.co/400x300/333/fff?text=Image';">
+                        <div class="menu-item-content">
+                            <div class="menu-item-title">
+                                <h3>Vegetable Stir Fry</h3>
+                                <span class="price">₹ 160</span>
+                            </div>
+                            <p>A medley of fresh vegetables wok-fried in a savory ginger-garlic sauce.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item hidden-item">
+                        <img src="https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Chocolate Lava Cake" onerror="this.onerror=null;this.src='https://placehold.co/400x300/333/fff?text=Image';">
+                        <div class="menu-item-content">
+                            <div class="menu-item-title">
+                                <h3>Chocolate Lava Cake</h3>
+                                <span class="price">₹ 110</span>
+                            </div>
+                            <p>Warm, rich chocolate cake with a gooey center, served with vanilla bean ice cream.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item hidden-item">
+                        <img src="https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Ribeye Steak" onerror="this.onerror=null;this.src='https://placehold.co/400x300/333/fff?text=Image';">
+                        <div class="menu-item-content">
+                            <div class="menu-item-title">
+                                <h3>Ribeye Steak</h3>
+                                <span class="price">₹ 350</span>
+                            </div>
+                            <p>Perfectly seared ribeye, served with roasted potatoes and asparagus.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-footer">
+                    <a href="#" class="btn" id="show-more-btn">See More</a>
+                    <a href="#" class="btn hidden" id="show-less-btn">See Less</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Gallery Section -->
+        <section id="gallery">
+            <div class="container">
+                <h2>Moments Captured</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="https://images.pexels.com/photos/101533/pexels-photo-101533.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Chef Preparing Food" onerror="this.onerror=null;this.src='https://placehold.co/400x400/333/fff?text=Image';"></div>
+                    <!-- This image was updated to a food image -->
+                    <div class="gallery-item"><img src="https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Gourmet Dish" onerror="this.onerror=null;this.src='https://placehold.co/400x400/333/fff?text=Image';"></div>
+                    <div class="gallery-item"><img src="https://images.pexels.com/photos/604969/pexels-photo-604969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Craft Cocktail" onerror="this.onerror=null;this.src='https://placehold.co/400x400/333/fff?text=Image';"></div>
+                    <div class="gallery-item"><img src="https://images.pexels.com/photos/1126728/pexels-photo-1126728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Happy Guests Dining" onerror="this.onerror=null;this.src='https://placehold.co/400x400/333/fff?text=Image';"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <h2>Visit Us</h2>
+                    <p>We would love to host you. Walk-ins are welcome, but reservations are recommended for evenings and weekends.</p>
+                    <p><strong>123 Culinary Lane, Foodie City, 12345</strong></p>
+                    <p><strong>Phone: (555) 123-4567</strong></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Order Online Modal -->
+    <div id="order-modal" class="modal-overlay">
+        <section id="order-online">
+            <div class="container order-form-container">
+                <button class="modal-close-btn" id="close-modal-btn">&times;</button>
+                <h2>Order Online</h2>
+                <p>Select your favorite dishes and place your order for pickup or delivery.</p>
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Select Dishes</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="salmon" name="dishes" value="Grilled Salmon">
+                                <label for="salmon">Grilled Salmon</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="pasta" name="dishes" value="Pasta Bolognese">
+                                <label for="pasta">Pasta Bolognese</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="salad" name="dishes" value="Caprese Salad">
+                                <label for="salad">Caprese Salad</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="stirfry" name="dishes" value="Vegetable Stir Fry">
+                                <label for="stirfry">Vegetable Stir Fry</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="cake" name="dishes" value="Chocolate Lava Cake">
+                                <label for="cake">Chocolate Lava Cake</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="steak" name="dishes" value="Ribeye Steak">
+                                <label for="steak">Ribeye Steak</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="requests">Special Requests</label>
+                        <textarea id="requests" name="requests" placeholder="e.g., no onions, extra sauce, etc."></textarea>
+                    </div>
+                    <button type="submit" class="btn order-btn">Place Order</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>&copy; 2024 The Golden Spoon. All rights reserved.</p>
+    </footer>
+
+    <!-- Link to the JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+</html>
