@@ -50,31 +50,6 @@ if (header) {
 }
 
 
-// --- Menu "See More" / "See Less" functionality ---
-const showMoreBtn = document.getElementById('show-more-btn');
-const showLessBtn = document.getElementById('show-less-btn');
-const hiddenItems = document.querySelectorAll('.menu-item.hidden-item');
-
-if (showMoreBtn && showLessBtn) {
-    showMoreBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        hiddenItems.forEach(item => {
-            item.style.display = 'flex'; // Or 'block', depending on your layout
-        });
-        showMoreBtn.classList.add('hidden');
-        showLessBtn.classList.remove('hidden');
-    });
-
-    showLessBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        hiddenItems.forEach(item => {
-            item.style.display = 'none';
-        });
-        showMoreBtn.classList.remove('hidden');
-        showLessBtn.classList.add('hidden');
-    });
-}
-
 
 // --- Order Form Submission ---
 const orderForm = document.getElementById('orderForm');
@@ -90,7 +65,7 @@ if (orderForm) {
                                  .map(checkbox => checkbox.value)
                                  .join(', ');
 
-        const orderMessage = `Thank you, ₹ {name}! Your order has been placed.\n\nDishes: ₹ {selectedDishes || 'None selected'}\nSpecial Requests: ₹ {requests || 'None'}`;
+        const orderMessage = `Thank you, Your order is Confirmed`;
         
         displayMessage(orderMessage);
         
@@ -134,4 +109,3 @@ if (orderModal) {
         }
     });
 }
-cd "c:\Users\prathmesh\Documents\college\INTERSHIP PROJECT\AB Infotrech Projects\Responsive Restaurant"cd "c:\Users\prathmesh\Documents\college\INTERSHIP PROJECT\AB Infotrech Projects\Responsive Restaurant"git initgit initgit init
